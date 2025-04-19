@@ -1,0 +1,264 @@
+.calendar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .calendar-controls button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  
+  .calendar-day {
+    border: 1px solid #ddd;
+    padding: 10px;
+    min-height: 100px;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.2s;
+  }
+  
+  .calendar-day:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .calendar-day.empty {
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+    cursor: default;
+  }
+  
+  .calendar-day.empty:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .calendar-day.today {
+    background-color: #e3f2fd;
+    border: 2px solid #90caf9;
+  }
+  
+  .calendar-day.today:hover {
+    background-color: #bbdefb;
+  }
+  
+  .calendar-day.today .day-number {
+    color: #1976d2;
+    font-weight: bold;
+  }
+  
+  .day-number {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .events {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .event {
+    background-color: #e3f2fd;
+    padding: 4px 8px;
+    margin: 2px 0;
+    border-radius: 3px;
+    font-size: 0.9em;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .event-actions {
+    display: flex;
+    gap: 4px;
+    margin-left: 8px;
+  }
+  
+  .event-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0 4px;
+    font-size: 14px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .event-btn.edit {
+    color: #2196f3;
+  }
+  
+  .event-btn.edit:hover {
+    background-color: #2196f320;
+  }
+  
+  .event-btn.delete {
+    color: #f44336;
+  }
+  
+  .event-btn.delete:hover {
+    background-color: #f4433620;
+  }
+
+  .event-btn.view {
+    color: #4caf50;
+  }
+  
+  .event-btn.view:hover {
+    background-color: #4caf5020;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .modal h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  
+  .modal input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .modal-buttons button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .modal-buttons button:first-child {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .modal-buttons button:last-child {
+    background-color: #6c757d;
+    color: white;
+  }
+
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .event-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .time-toggle {
+    display: flex;
+    align-items: center;
+  }
+  
+  .toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  
+  .time-inputs {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+  }
+  
+  .time-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .time-field label {
+    font-size: 0.9em;
+    color: #666;
+  }
+  
+  .time-field input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .day-of-week {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: none;
+    color: #495057;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .calendar-day.day-of-week:hover {
+    background-color: #f8f9fa;
+    cursor: default;
+  }
